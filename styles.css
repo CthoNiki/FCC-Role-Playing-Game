@@ -10,6 +10,7 @@
   * {
     margin: 0;
     font-family: var(--font);
+    font-size: clamp(0.5rem, calc(0.75rem + 0.667vw), 1rem); /* min: 16px, max: 20px */;
     text-transform: uppercase;
     color: #ffffff;
   }
