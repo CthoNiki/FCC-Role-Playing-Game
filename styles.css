@@ -1,27 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+/* CSS Reset */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+    font-family: var(--font);
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /*End CSS Reset*/
+:root{
+    --font: 'Outfit', sans-serif;
+    --bgSize: 150px; /* control the size */
+    --bgColorPrimary: #FF85E3;
+    --bgColorSecondary: #7741BB;
+    --backgroundWaves: var(--bgColorSecondary) 4% 14%, var(--bgColorPrimary) 14% 24%, var(--bgColorSecondary) 22% 34%,
+    var(--bgColorPrimary) 34% 44%, var(--bgColorSecondary) 44% 56%, var(--bgColorPrimary) 56% 66%, var(--bgColorSecondary) 66% 76%,
+    var(--bgColorPrimary) 76% 86%, var(--bgColorSecondary) 86% 96%;
+}
 body {
-    background-color: #0a0a23;
+    background: radial-gradient(
+      100% 100% at 100% 0,
+      var(--bgColorPrimary) 4%,
+      var(--backgroundWaves),
+      #0008 96%,
+      #0000
+    ),
+    radial-gradient(
+        100% 100% at 0 100%,
+        #0000,
+        #0008 4%,
+        var(--backgroundWaves),
+        var(--bgColorPrimary) 96%
+      )
+      var(--bgColorPrimary);
+  background-size: var(--bgSize) var(--bgSize);
   }
   
   #text {
-    background-color: #0a0a23;
-    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
     padding: 10px;
+    text-align: center;
   }
   
   #game {
-    max-width: 500px;
-    max-height: 400px;
-    background-color: #ffffff;
-    color: #ffffff;
-    margin: 30px auto 0px;
-    padding: 10px;
+    width: 90%;
+    max-width: 520px;
+    background-color: #2C2C2C;
+    margin: 2rem auto;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0px 10px 0px 0 #000;
+  }
+
+  #screen{
+    min-height: 300px;
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    padding: 1rem;
   }
   
-  #controls,
+
   #stats {
-    border: 1px solid #0a0a23;
-    padding: 5px;
+    border-bottom: 1px solid #444;
+    padding: 0.5rem;
     color: #0a0a23;
+    text-align: right;
   }
   
   #monsterStats {
@@ -35,11 +126,22 @@ body {
   .stat {
     padding-right: 10px;
   }
+
+  #controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
   
   button {
     cursor: pointer;
+    border: none;
+    box-shadow: #FF34D0 0px 4px 0px;
     color: #0a0a23;
-    background-color: #feac32;
-    background-image: linear-gradient(#fecc4c, #ffac33);
-    border: 3px solid #feac32;
+    font-weight: 600;
+    background-color: var(--bgColorPrimary);
+    padding: 0.5rem;
+    border-radius: 200px;
   }
