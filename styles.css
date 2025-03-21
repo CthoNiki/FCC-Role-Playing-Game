@@ -83,11 +83,18 @@ body {
   
   #text {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 220px;
     padding: 10px;
     text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(1.25rem, calc(0rem + 3.333vw), 2rem); /* min: 20px, max: 40px */;
+    margin-bottom: 1rem;
+    line-height: 1;
   }
   
   #game {
@@ -98,6 +105,7 @@ body {
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0px 10px 0px 0 #000;
+    border: #363636 10px solid;
   }
 
   #screen{
@@ -124,7 +132,19 @@ body {
   }
   
   .stat {
-    padding-right: 10px;
+    padding-right: 0.5rem;
+  }
+
+  #xpText {
+    color: #85fffb;
+  }
+
+  #healthText {
+    color: #eb5c5c;
+  }
+
+  #goldText {
+    color: #e6ad58;
   }
 
   #controls {
@@ -145,3 +165,27 @@ body {
     padding: 0.5rem;
     border-radius: 200px;
   }
+
+  #button1 {
+    background-color: var(--bgColorPrimary);
+    box-shadow: #FF34D0 0px 4px 0px;
+  }
+
+    #button2 {
+        background-color: var(--bgColorSecondary);
+        box-shadow: #410E81 0px 4px 0px;
+        color: #ffffff;
+    }
+
+    #button3 {
+        background-color: #FFC464;
+        box-shadow: #FF9E00 0px 4px 0px;
+    }
+
+    .decorationWrapper {
+        width: 100%;
+    }
+
+    .decorationWrapper img {
+        width: 100%;
+    }
